@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Lingkungan - EcoEdu</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">EcoEdu</div>
+        <ul>
+            <li><a href="../index.html">Beranda</a></li>
+            <li><a href="artikel.html">Artikel</a></li>
+            <li><a href="program.html">Program</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <main class="quiz-container">
+        <section class="quiz-intro">
+            <h1>Quiz Pengetahuan Lingkungan</h1>
+            <p>Uji pengetahuanmu tentang lingkungan dan sustainability!</p>
+            <button id="startQuiz" class="cta-button">Mulai Quiz</button>
+        </section>
+
+        <section class="quiz-content" style="display: none;">
+            <div class="quiz-progress">
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
+                <p>Pertanyaan <span id="currentQuestion">1</span> dari <span id="totalQuestions">5</span></p>
+            </div>
+
+            <div class="quiz-card">
+                <h2 id="question"></h2>
+                <div class="options" id="options">
+                </div>
+            </div>
+
+            <button id="nextButton" class="cta-button" style="display: none;">Selanjutnya</button>
+        </section>
+
+        <section class="quiz-result" style="display: none;">
+            <div class="result-card">
+                <h2>Hasil Quiz</h2>
+                <div class="score-display">
+                    <span id="score">0</span>/5
+                </div>
+                <p id="resultMessage"></p>
+                <button id="retryButton" class="cta-button">Coba Lagi</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>EcoEdu</h3>
+                <p>Bersama Menjaga Bumi Kita</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="artikel.html">Artikel</a></li>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p>Email: info@ecoedu.id</p>
+                <p>Tel: 0895629350777</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 EcoEdu. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/quiz.js"></script>
+</body>
+</html>

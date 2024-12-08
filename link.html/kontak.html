@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - EcoEdu</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Leaflet CSS untuk map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">EcoEdu</div>
+        <ul>
+            <li><a href="../index.html">Beranda</a></li>
+            <li><a href="artikel.html">Artikel</a></li>
+            <li><a href="program.html">Program</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <header class="contact-header">
+        <div class="contact-hero">
+            <h1>Hubungi Kami</h1>
+            <p>Kami siap mendengar dan berkolaborasi untuk lingkungan yang lebih baik</p>
+        </div>
+    </header>
+
+    <main class="contact-main">
+        <section class="contact-info">
+            <div class="info-container">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Lokasi</h3>
+                    <p>Jl. Eco Edukatif No. 123</p>
+                    <p>Jakarta Selatan, 12345</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Telepon</h3>
+                    <p>+62 895-6293-50777</p>
+                    <p>Senin - Jumat: 09:00 - 17:00</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>info@ecoedu.id</p>
+                    <p>support@ecoedu.id</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Social Media</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="form-map-container">
+                <div class="contact-form-container">
+                    <h2>Kirim Pesan</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Kirim Pesan</button>
+                    </form>
+                </div>
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Pertanyaan Yang Sering Diajukan</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Bagaimana cara bergabung sebagai volunteer?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Anda dapat mendaftar sebagai volunteer melalui halaman Volunteer kami atau menghubungi tim kami melalui email volunteer@ecoedu.id</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Apakah ada program edukasi untuk sekolah?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, kami memiliki berbagai program edukasi yang dapat disesuaikan dengan kebutuhan sekolah Anda.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Bagaimana cara berkolaborasi dengan EcoEdu?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kami terbuka untuk berbagai bentuk kolaborasi. Silakan kirim proposal Anda ke partnership@ecoedu.id</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>EcoEdu</h3>
+                <p>Bersama Menjaga Bumi Kita</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="artikel.html">Artikel</a></li>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p>Email: info@ecoedu.id</p>
+                <p>Tel: 0895629350777</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 EcoEdu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/contact.js"></script>
+</body>
+</html>

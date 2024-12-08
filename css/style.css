@@ -1,0 +1,1251 @@
+/* ===============================
+   1. RESET DAN PENGATURAN DASAR
+   =============================== */
+* {
+    margin: 0;          /* Menghilangkan margin default */
+    padding: 0;         /* Menghilangkan padding default */
+    box-sizing: border-box; /* Mengatur box model untuk perhitungan ukuran yang lebih mudah */
+}
+
+/* ===============================
+   2. VARIABEL WARNA DAN TEMA
+   =============================== */
+:root {
+    --primary-color: #2ecc71;    /* Warna utama - hijau */
+    --secondary-color: #27ae60;  /* Warna sekunder - hijau tua */
+    --text-color: #333;         /* Warna teks utama */
+    --light-bg: #f9f9f9;        /* Warna latar belakang terang */
+}
+
+/* ===============================
+   3. PENGATURAN BODY
+   =============================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font system */
+    line-height: 1.6;    /* Jarak antar baris */
+    color: var(--text-color); /* Warna teks menggunakan variabel */
+}
+
+/* ===============================
+   4. HEADER DAN NAVIGASI
+   =============================== */
+header {
+    background-size: cover;      /* Gambar menutupi seluruh area */
+    background-position: center; /* Posisi gambar di tengah */
+    height: 100vh;              /* Tinggi 100% viewport */
+    color: white;
+}
+
+nav .logo {
+    display: flex;
+    position: absolute; /* Gunakan posisi absolute */
+    top: 0; /* Posisi di atas */
+    left: 20px; /* Sesuaikan posisi kiri agar tidak terlalu mepet */
+    padding: 10px; /* Tambahkan padding untuk memberi jarak */
+    z-index: 1000; /* Pastikan logo berada di atas elemen lain */
+}
+
+nav {
+    display: flex; /* Gunakan layout flexbox */
+    justify-content: center; /* Pusatkan item navigasi */
+    align-items: center; /* Pusatkan item secara vertikal */
+    padding: 1rem 5%; /* Padding untuk atas-bawah dan kiri-kanan */
+    width: 100%; /* Lebar penuh */
+    background: rgba(255, 255, 255, 0.95); /* Latar belakang semi-transparan */
+    z-index: 1000; /* Pastikan navbar berada di atas elemen lain */
+    position: relative; /* Tetapkan posisi relatif untuk anchor elemen absolute seperti logo */
+}
+
+
+/* Logo styling */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Navigasi menu */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: 0.3s;        /* Animasi hover */
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* ===============================
+   5. HERO SECTION
+   =============================== */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Tombol Call-to-Action */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 2rem;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);  /* Efek mengambang saat hover */
+}
+
+/* ===============================
+   6. SECTION UMUM
+   =============================== */
+section {
+    padding: 5rem 10%;
+}
+
+/* ===============================
+   7. GRID ARTIKEL
+   =============================== */
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.article-grid article {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+/* Efek hover pada artikel */
+.article-grid article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.article-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.article-grid article:hover img {
+    transform: scale(1.05);  /* Efek zoom pada gambar saat hover */
+}
+
+
+/* ===============================
+   8. ABOUT US SECTION
+   =============================== */
+.about-us {
+    background-color: var(--light-bg); /* Menggunakan warna background dari variabel */
+    padding: 5rem 10%;                 /* Padding atas-bawah 5rem, kiri-kanan 10% */
+}
+
+.about-content {
+    display: flex;                     /* Layout flexbox */
+    gap: 2rem;                        /* Jarak antar elemen */
+    align-items: center;              /* Perataan vertikal di tengah */
+}
+
+.about-text {
+    flex: 1;                          /* Mengambil ruang yang tersedia secara merata */
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;                      /* Gambar mengisi container */
+    border-radius: 10px;              /* Sudut membulat */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Efek bayangan */
+}
+
+/* ===============================
+   9. PROGRAM CARDS SECTION
+   =============================== */
+.program-cards {
+    display: grid;                    /* Layout grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsif */
+    gap: 2rem;                        /* Jarak antar kartu */
+    margin-top: 2rem;
+}
+
+.program-card {
+    background: white;
+    border-radius: 10px;              /* Sudut membulat */
+    overflow: hidden;                 /* Menghindari konten keluar dari border-radius */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Efek bayangan */
+    transition: 0.3s;                 /* Animasi hover */
+}
+
+.program-card:hover {
+    transform: translateY(-5px);      /* Efek mengambang saat hover */
+}
+
+.program-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;                /* Memastikan gambar menutupi area dengan proporsi */
+}
+
+.program-card h3, 
+.program-card p {
+    padding: 1rem;                    /* Spacing konten dalam kartu */
+}
+
+/* Program Section Styles Pada Halama Program*/
+
+.program-section {
+    padding: 5rem 0;
+}
+
+.program-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.program-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.program-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.program-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+}
+
+.program-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.program-content {
+    padding: 1.5rem;
+}
+
+.program-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.program-content p {
+    margin-bottom: 1.5rem;
+}
+
+.program-content .btn {
+    align-self: start;
+}
+
+/* ===============================
+   10. STATS SECTION
+   =============================== */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.stat-item .stat-number {
+    font-size: 2.5rem;               /* Ukuran angka statistik */
+    font-weight: bold;
+    color: var(--primary-color);     /* Warna menggunakan variabel */
+}
+
+/* ===============================
+   11. CONTACT INFO SECTION
+   =============================== */
+.contact-info {
+    background: var(--light-bg);
+    text-align: center;
+}
+
+.ceo-profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;              /* Membuat gambar bulat */
+    margin-bottom: 1rem;
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;                       /* Jarak antar link sosial media */
+    margin-top: 2rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: 0.3s;                /* Animasi hover */
+}
+
+.social-link:hover {
+    color: var(--primary-color);     /* Warna saat hover */
+}
+
+.social-link i {
+    font-size: 1.5rem;              /* Ukuran ikon */
+}
+
+/* ===============================
+   12. FOOTER SECTION
+   =============================== */
+footer {
+    background: #333;                /* Background gelap */
+    color: white;
+    padding: 3rem 10%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-links ul {
+    list-style: none;               /* Menghilangkan bullet points */
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);    /* Warna link saat hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1); /* Garis pemisah */
+}
+
+/* ===============================
+   13. RESPONSIVE DESIGN
+   =============================== */
+@media (max-width: 768px) {
+    /* Penyesuaian grid artikel untuk layar kecil */
+    .article-grid {
+        grid-template-columns: 1fr;  /* Satu kolom pada mobile */
+    }
+    
+    /* Menyembunyikan menu navigasi pada mobile */
+    nav ul {
+        display: none;
+    }
+    
+    /* Ukuran heading yang lebih kecil pada mobile */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* ===============================
+   1. GALLERY HEADER STYLES
+   =============================== */
+   .gallery-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                      url('https://images.unsplash.com/photo-1497436072909-60f360e1d4b1');
+    background-size: cover;          /* Gambar menutupi seluruh area */
+    background-position: center;     /* Posisi gambar di tengah */
+    height: 50vh;                   /* Tinggi 50% dari viewport */
+    display: flex;                  /* Layout flexbox */
+    align-items: center;            /* Perataan vertikal tengah */
+    justify-content: center;        /* Perataan horizontal tengah */
+    text-align: center;
+    color: white;
+}
+
+.gallery-hero h1 {
+    font-size: 3rem;                /* Ukuran font judul */
+    margin-bottom: 1rem;            /* Jarak ke paragraf */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Efek bayangan teks */
+}
+
+/* ===============================
+   2. FILTER BUTTONS STYLES
+   =============================== */
+.gallery-filter {
+    padding: 2rem 0;                /* Padding atas dan bawah */
+    text-align: center;             /* Perataan teks tengah */
+}
+
+.filter-buttons {
+    display: flex;                  /* Layout flexbox */
+    justify-content: center;        /* Perataan horizontal tengah */
+    gap: 1rem;                      /* Jarak antar tombol */
+    flex-wrap: wrap;                /* Wrap pada layar kecil */
+}
+
+.filter-btn {
+    padding: 0.8rem 1.5rem;         /* Padding dalam tombol */
+    border: 2px solid var(--primary-color); /* Border tombol */
+    background: transparent;        /* Background transparan */
+    color: var(--primary-color);    /* Warna teks */
+    border-radius: 25px;            /* Border radius membulat */
+    cursor: pointer;                /* Cursor pointer */
+    transition: all 0.3s ease;      /* Animasi smooth */
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--primary-color); /* Background saat active/hover */
+    color: white;                   /* Warna teks saat active/hover */
+}
+
+/* ===============================
+   3. GALLERY GRID STYLES
+   =============================== */
+.gallery-grid {
+    display: grid;                  /* Layout grid */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grid responsif */
+    gap: 2rem;                      /* Jarak antar item */
+    padding: 2rem 10%;              /* Padding container */
+}
+
+.gallery-item {
+    position: relative;             /* Untuk positioning overlay */
+    border-radius: 15px;            /* Border radius membulat */
+    overflow: hidden;               /* Hide overflow content */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Efek bayangan */
+    transition: transform 0.3s ease; /* Animasi transform */
+}
+
+.gallery-item img {
+    width: 100%;                    /* Lebar gambar 100% */
+    height: 300px;                  /* Tinggi tetap */
+    object-fit: cover;              /* Cover fitting */
+    transition: transform 0.3s ease; /* Animasi transform */
+}
+
+/* ===============================
+   4. GALLERY OVERLAY STYLES
+   =============================== */
+.gallery-overlay {
+    position: absolute;             /* Positioning absolute */
+    bottom: 0;                      /* Posisi di bawah */
+    left: 0;                        /* Posisi dari kiri */
+    right: 0;                       /* Posisi dari kanan */
+    background: linear-gradient(transparent, rgba(0,0,0,0.7)); /* Gradient overlay */
+    padding: 1.5rem;                /* Padding dalam overlay */
+    color: white;                   /* Warna teks */
+    opacity: 0;                     /* Default tidak terlihat */
+    transition: opacity 0.3s ease;  /* Animasi opacity */
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;                     /* Tampilkan overlay saat hover */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);          /* Zoom in gambar saat hover */
+}
+
+/* ===============================
+   5. GALLERY STATS STYLES
+   =============================== */
+.gallery-stats {
+    background: var(--light-bg);    /* Background menggunakan variabel */
+    padding: 4rem 10%;              /* Padding section */
+}
+
+.stats-container {
+    display: grid;                  /* Layout grid */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grid responsif */
+    gap: 2rem;                      /* Jarak antar stat */
+    text-align: center;             /* Perataan teks tengah */
+}
+
+.stat-item i {
+    font-size: 2.5rem;              /* Ukuran icon */
+    color: var(--primary-color);    /* Warna icon */
+    margin-bottom: 1rem;            /* Jarak ke angka */
+}
+
+.stat-item .stat-number {
+    font-size: 2rem;                /* Ukuran angka */
+    font-weight: bold;              /* Teks tebal */
+    color: var(--text-color);       /* Warna teks */
+}
+
+/* ===============================
+   6. LIGHTBOX CUSTOMIZATION
+   =============================== */
+.lb-data .lb-caption {
+    font-size: 1.2rem;              /* Ukuran caption */
+    font-weight: bold;              /* Teks caption tebal */
+}
+
+.lb-data .lb-details {
+    width: 100%;                    /* Lebar details */
+    padding: 1rem;                  /* Padding details */
+}
+
+/* ===============================
+   7. ANIMATION STYLES
+   =============================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.gallery-item {
+    animation: fadeIn 0.5s ease;    /* Animasi fade in */
+}
+
+/* ===============================
+   8. RESPONSIVE DESIGN
+   =============================== */
+@media (max-width: 768px) {
+    .gallery-header {
+        height: 40vh;               /* Tinggi header lebih kecil */
+    }
+
+    .gallery-hero h1 {
+        font-size: 2rem;            /* Font judul lebih kecil */
+    }
+
+    .gallery-grid {
+        padding: 2rem 5%;           /* Padding grid lebih kecil */
+    }
+
+    .filter-buttons {
+        flex-direction: column;     /* Tombol filter vertikal */
+        align-items: center;        /* Perataan tengah */
+    }
+
+    .filter-btn {
+        width: 80%;                 /* Lebar tombol */
+    }
+}
+
+/* ===============================
+   9. UTILITY CLASSES
+   =============================== */
+.hidden {
+    display: none;                  /* Hide elements */
+}
+
+.fade {
+    opacity: 0;                     /* Untuk animasi fade */
+    transition: opacity 0.3s ease;
+}
+
+.fade.show {
+    opacity: 1;                     /* Show faded elements */
+}
+
+/* ===============================
+   1. QUIZ CONTAINER STYLES
+   =============================== */
+.quiz-container {
+    padding: 5rem 10%;             /* Padding atas-bawah 5rem, kiri-kanan 10% */
+    min-height: 80vh;              /* Minimal tinggi 80% dari viewport */
+    background: var(--light-bg);   /* Menggunakan variabel warna background */
+}
+
+.quiz-intro {
+    text-align: center;            /* Perataan teks di tengah */
+    margin-bottom: 3rem;           /* Jarak ke elemen berikutnya */
+}
+
+.quiz-intro h1 {
+    color: var(--primary-color);   /* Warna judul menggunakan variabel */
+    margin-bottom: 1rem;           /* Jarak ke paragraf di bawahnya */
+    font-size: 2.5rem;             /* Ukuran font judul */
+}
+
+/* ===============================
+   2. QUIZ CARD STYLES
+   =============================== */
+.quiz-card {
+    background: white;             /* Latar belakang putih */
+    border-radius: 15px;           /* Sudut membulat */
+    padding: 2rem;                 /* Padding dalam kartu */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Efek bayangan */
+    margin: 2rem 0;                /* Margin atas dan bawah */
+    transition: all 0.3s ease;     /* Animasi smooth */
+}
+
+.quiz-card h2 {
+    color: var(--text-color);      /* Warna teks pertanyaan */
+    margin-bottom: 1.5rem;         /* Jarak ke opsi jawaban */
+    font-size: 1.5rem;             /* Ukuran font pertanyaan */
+}
+
+/* ===============================
+   3. PROGRESS BAR STYLES
+   =============================== */
+.quiz-progress {
+    margin-bottom: 2rem;           /* Jarak ke konten quiz */
+}
+
+.progress-bar {
+    background: #eee;              /* Warna latar progress bar */
+    height: 10px;                  /* Tinggi progress bar */
+    border-radius: 5px;            /* Sudut membulat */
+    margin-bottom: 1rem;           /* Jarak ke teks progress */
+    overflow: hidden;              /* Menghindari overflow progress */
+}
+
+.progress {
+    background: var(--primary-color); /* Warna progress menggunakan variabel */
+    height: 100%;                  /* Tinggi mengisi container */
+    border-radius: 5px;            /* Sudut membulat */
+    transition: width 0.3s ease;   /* Animasi perubahan width */
+}
+
+/* ===============================
+   4. OPTIONS STYLES
+   =============================== */
+.options {
+    display: grid;                 /* Layout menggunakan grid */
+    gap: 1rem;                     /* Jarak antar opsi */
+    margin: 2rem 0;               /* Margin atas dan bawah */
+}
+
+.option {
+    padding: 1rem;                /* Padding dalam opsi */
+    border: 2px solid #eee;       /* Border tipis */
+    border-radius: 8px;           /* Sudut membulat */
+    cursor: pointer;              /* Cursor pointer saat hover */
+    transition: all 0.3s ease;    /* Animasi smooth */
+    background: white;            /* Latar belakang putih */
+    font-size: 1rem;             /* Ukuran font */
+}
+
+/* Hover state untuk opsi */
+.option:hover {
+    border-color: var(--primary-color); /* Warna border saat hover */
+    background: #f9f9f9;          /* Warna background saat hover */
+}
+
+/* Styling untuk opsi yang benar */
+.option.correct {
+    background: #d4edda;          /* Warna hijau muda untuk jawaban benar */
+    border-color: #28a745;        /* Border hijau */
+    color: #155724;              /* Warna teks hijau tua */
+}
+
+/* Styling untuk opsi yang salah */
+.option.wrong {
+    background: #f8d7da;          /* Warna merah muda untuk jawaban salah */
+    border-color: #dc3545;        /* Border merah */
+    color: #721c24;              /* Warna teks merah tua */
+}
+
+/* ===============================
+   5. RESULT CARD STYLES
+   =============================== */
+.result-card {
+    text-align: center;           /* Perataan teks di tengah */
+    padding: 3rem;                /* Padding dalam kartu hasil */
+    background: white;            /* Latar belakang putih */
+    border-radius: 15px;          /* Sudut membulat */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Efek bayangan */
+}
+
+.score-display {
+    font-size: 3rem;             /* Ukuran font score */
+    color: var(--primary-color);  /* Warna score menggunakan variabel */
+    margin: 2rem 0;              /* Margin atas dan bawah */
+    font-weight: bold;           /* Teks tebal */
+}
+
+/* ===============================
+   6. BUTTON STYLES
+   =============================== */
+#nextButton, 
+#retryButton {
+    margin-top: 2rem;            /* Jarak dari elemen atas */
+    padding: 1rem 2rem;          /* Padding dalam tombol */
+    background: var(--primary-color); /* Warna background tombol */
+    color: white;                /* Warna teks putih */
+    border: none;                /* Tanpa border */
+    border-radius: 5px;          /* Sudut membulat */
+    cursor: pointer;             /* Cursor pointer */
+    transition: all 0.3s ease;   /* Animasi smooth */
+}
+
+#nextButton:hover, 
+#retryButton:hover {
+    background: var(--secondary-color); /* Warna hover */
+    transform: translateY(-2px);  /* Efek mengambang saat hover */
+}
+
+/* ===============================
+   7. ANIMATION STYLES
+   =============================== */
+.fade-in {
+    animation: fadeIn 0.5s ease;  /* Animasi fade in */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;              /* Mulai dari transparan */
+        transform: translateY(10px); /* Mulai dari posisi lebih bawah */
+    }
+    to {
+        opacity: 1;              /* Berakhir dengan opacity penuh */
+        transform: translateY(0); /* Kembali ke posisi normal */
+    }
+}
+
+/* ===============================
+   8. RESPONSIVE DESIGN
+   =============================== */
+@media (max-width: 768px) {
+    .quiz-container {
+        padding: 3rem 5%;         /* Padding lebih kecil di mobile */
+    }
+
+    .quiz-intro h1 {
+        font-size: 2rem;          /* Font lebih kecil di mobile */
+    }
+
+    .quiz-card {
+        padding: 1.5rem;          /* Padding lebih kecil di mobile */
+    }
+
+    .option {
+        padding: 0.8rem;          /* Padding opsi lebih kecil */
+    }
+
+    .score-display {
+        font-size: 2.5rem;        /* Score display lebih kecil */
+    }
+}
+
+/* ===============================
+   9. ACCESSIBILITY STYLES
+   =============================== */
+.option:focus {
+    outline: 2px solid var(--primary-color); /* Outline saat focus */
+    outline-offset: 2px;         /* Jarak outline dari elemen */
+}
+
+/* Styling untuk screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+/* ===============================
+   10. UTILITY CLASSES
+   =============================== */
+.hidden {
+    display: none;               /* Utility class untuk menyembunyikan elemen */
+}
+
+.visible {
+    display: block;              /* Utility class untuk menampilkan elemen */
+}
+
+.text-center {
+    text-align: center;          /* Utility class untuk perataan teks */
+}
+
+.mb-2 {
+    margin-bottom: 2rem;         /* Utility class untuk margin bottom */
+}
+
+.mt-2 {
+    margin-top: 2rem;            /* Utility class untuk margin top */
+}
+/* ===============================
+   1. VOLUNTEER HEADER STYLES
+   =============================== */
+.volunteer-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                      url('https://images.unsplash.com/photo-1544027993-37dbfe43562a');
+    background-size: cover;          /* Gambar menutupi seluruh area */
+    background-position: center;     /* Posisi gambar di tengah */
+    height: 60vh;                   /* Tinggi 60% dari viewport */
+    display: flex;                  /* Menggunakan flexbox */
+    align-items: center;            /* Perataan vertikal di tengah */
+    justify-content: center;        /* Perataan horizontal di tengah */
+    text-align: center;
+    color: white;
+}
+
+.volunteer-hero h1 {
+    font-size: 3rem;                /* Ukuran font untuk judul utama */
+    margin-bottom: 1rem;            /* Jarak bawah */
+}
+
+/* ===============================
+   2. BENEFITS SECTION STYLES
+   =============================== */
+.benefits-grid {
+    display: grid;                  /* Menggunakan layout grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid responsif */
+    gap: 2rem;                      /* Jarak antar elemen grid */
+    margin-top: 3rem;               /* Jarak dari elemen atas */
+}
+
+.benefit-card {
+    text-align: center;             /* Teks di tengah */
+    padding: 2rem;                  /* Padding dalam kartu */
+    background: white;              /* Latar belakang putih */
+    border-radius: 10px;            /* Sudut membulat */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Efek bayangan */
+    transition: transform 0.3s ease; /* Animasi hover */
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);     /* Efek mengambang saat hover */
+}
+
+.benefit-card i {
+    font-size: 2.5rem;              /* Ukuran ikon */
+    color: var(--primary-color);     /* Warna ikon menggunakan variabel */
+    margin-bottom: 1rem;            /* Jarak bawah ikon */
+}
+
+/* ===============================
+   3. PROGRAM CARDS STYLES
+   =============================== */
+.volunteer-program-card {
+    background: white;              /* Latar belakang putih */
+    border-radius: 15px;            /* Sudut membulat */
+    overflow: hidden;               /* Menghindari konten keluar dari border-radius */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Efek bayangan */
+    margin-bottom: 2rem;            /* Jarak antar kartu */
+}
+
+.volunteer-program-card img {
+    width: 100%;                    /* Lebar gambar penuh */
+    height: 250px;                  /* Tinggi gambar tetap */
+    object-fit: cover;              /* Memastikan gambar menutupi area dengan proporsi */
+}
+
+.program-content {
+    padding: 2rem;                  /* Padding konten */
+}
+
+.program-details {
+    list-style: none;               /* Menghilangkan bullet points */
+    margin-top: 1rem;               /* Jarak dari konten atas */
+}
+
+.program-details li {
+    margin: 0.5rem 0;               /* Jarak antar item */
+    display: flex;                  /* Menggunakan flexbox */
+    align-items: center;            /* Perataan vertikal */
+    gap: 0.5rem;                    /* Jarak antara ikon dan teks */
+}
+
+.program-details i {
+    color: var(--primary-color);     /* Warna ikon menggunakan variabel */
+}
+
+/* ===============================
+   4. VOLUNTEER FORM STYLES
+   =============================== */
+.volunteer-form {
+    background: var(--light-bg);     /* Latar belakang menggunakan variabel */
+    padding: 5rem 10%;              /* Padding atas-bawah dan kiri-kanan */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;          /* Jarak antar kelompok form */
+}
+
+.form-group label {
+    display: block;                 /* Label menempati baris sendiri */
+    margin-bottom: 0.5rem;          /* Jarak ke input */
+    font-weight: bold;              /* Teks label tebal */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;                    /* Lebar penuh */
+    padding: 0.8rem;                /* Padding dalam input */
+    border: 1px solid #ddd;         /* Border tipis */
+    border-radius: 5px;             /* Sudut membulat */
+    font-size: 1rem;                /* Ukuran font */
+}
+
+.form-group textarea {
+    resize: vertical;               /* Hanya bisa diresize vertikal */
+}
+
+/* ===============================
+   5. RESPONSIVE DESIGN STYLES
+   =============================== */
+@media (max-width: 768px) {
+    /* Penyesuaian untuk layar mobile */
+    .volunteer-hero h1 {
+        font-size: 2rem;            /* Ukuran font lebih kecil di mobile */
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;  /* Satu kolom di mobile */
+    }
+
+    .program-grid {
+        grid-template-columns: 1fr;  /* Satu kolom di mobile */
+    }
+
+    .volunteer-form {
+        padding: 3rem 5%;           /* Padding lebih kecil di mobile */
+    }
+}
+
+/* ===============================
+   6. ANIMATION STYLES
+   =============================== */
+.benefit-card,
+.volunteer-program-card {
+    transition: all 0.3s ease;      /* Animasi smooth untuk semua perubahan */
+}
+
+.benefit-card:hover,
+.volunteer-program-card:hover {
+    transform: translateY(-5px);     /* Efek mengambang saat hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Bayangan lebih besar saat hover */
+}
+
+/* ===============================
+   7. FORM INTERACTION STYLES
+   =============================== */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;                  /* Menghilangkan outline default */
+    border-color: var(--primary-color); /* Border berwarna saat focus */
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.2); /* Efek glow saat focus */
+}
+
+/* ===============================
+   8. UTILITY CLASSES
+   =============================== */
+.text-center {
+    text-align: center;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+/* ===============================
+   1. CONTACT HEADER STYLES
+   =============================== */
+   .contact-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                      url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===============================
+   2. CONTACT INFO STYLES
+   =============================== */
+.contact-info {
+    padding: 4rem 10%;
+    background: var(--light-bg);
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.info-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* ===============================
+   3. CONTACT FORM STYLES
+   =============================== */
+.contact-form-section {
+    padding: 4rem 10%;
+}
+
+.form-map-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* ===============================
+   4. MAP STYLES
+   =============================== */
+.map-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#map {
+    height: 100%;
+    min-height: 400px;
+}
+
+/* ===============================
+   5. FAQ STYLES
+   =============================== */
+.faq-section {
+    padding: 4rem 10%;
+    background: var(--light-bg);
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* ===============================
+   6. RESPONSIVE DESIGN
+   =============================== */
+@media (max-width: 768px) {
+    .contact-hero h1 {
+        font-size: 2rem;
+    }
+
+    .form-map-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info,
+    .contact-form-section,
+    .faq-section {
+        padding: 3rem 5%;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+}
+
+/* ===============================
+   7. ANIMATION STYLES
+   =============================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.info-card,
+.contact-form-container,
+.map-container,
+.faq-item {
+    animation: fadeIn 0.5s ease forwards;
+}
